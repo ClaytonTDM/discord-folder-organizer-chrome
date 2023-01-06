@@ -1,0 +1,26 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "Discord Folder Organizer",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "Tired of the bad Discord folder thumbnails? Try Discord Folder Organizer.",
+  "icons": {
+    "96": "icons/icon.png"
+  },
+  "default_locale": "en",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.discord.com/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["src/inject/inject.js"],
+    "matches": ["https://*.discord.com/*"]
+  }]
+}
